@@ -156,6 +156,9 @@ export default function Sankey() {
 
   function computeNodeDepths({nodes}) {
     const n = nodes.length;
+    if (n > 0 && nodes[0].depth != undefined) {
+      return;
+    }
     let current = new Set(nodes);
     let next = new Set;
     let x = 0;
